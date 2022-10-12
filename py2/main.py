@@ -36,7 +36,6 @@ def shift_position(n):
   list = []
   for i in range(-n, n + 1):
     list.append(i)
-  #list = list[n:n+1]
   list.insert(0, list[len(list) - 1])
   list.insert(0, list[len(list) - 2])
   print(list[:len(list) - 2])
