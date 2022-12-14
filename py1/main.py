@@ -13,15 +13,16 @@ def is_holiday(number):
 is_holiday(7)
 
 # 2
-def is_truth(x, y, z):
-  print(f'x = {x}, y = {y}, z = {z}')
-  if not (x or y or z) == (not x) and (not y) and (not z):
-    print('Утверждение истинно')
-  else:
-    print('Утверждение ложно')
-
-
-is_truth(0, 0, 0)
+def is_truth(rows):
+  print('¬(X ⋁ Y ⋁ Z) = ¬X ⋀ ¬Y ⋀ ¬Z')
+  for i in range(rows):
+    x = round(int(bin(i)[2:len(bin(i))]) / 100)
+    y = round(int(bin(i)[2:len(bin(i))]) / 10 % 10)
+    z = int(bin(i)[2:len(bin(i))]) % 10
+    result = not (x or y or z) == (not x) and (not y) and (not z)
+    print(f'¬({x} ⋁ {y} ⋁ {z}) = ¬{x} ⋀ ¬{y} ⋀ ¬{z} | {result}')
+    
+is_truth(8)
 
 # 3
 def get_term(x, y):
