@@ -19,7 +19,7 @@ def is_truth(rows):
     x = round(int(bin(i)[2:len(bin(i))]) / 100)
     y = round(int(bin(i)[2:len(bin(i))]) / 10 % 10)
     z = int(bin(i)[2:len(bin(i))]) % 10
-    result = not (x or y or z) == (not x) and (not y) and (not z)
+    result = not (x or y or z) == (not x and not y and not z)
     print(f'¬({x} ⋁ {y} ⋁ {z}) = ¬{x} ⋀ ¬{y} ⋀ ¬{z} | {result}')
     
 is_truth(8)
