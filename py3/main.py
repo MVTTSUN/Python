@@ -32,7 +32,7 @@ def diff_float(my_list):
         min_number = my_list[i]
   print(max_number - min_number)
 
-diff_float([1.1, 1.2, 3.1, 5, 10.01])
+diff_float([1.001, 1.002, 3.001, 5, 10.00001])
 
 #4
 my_list = []
