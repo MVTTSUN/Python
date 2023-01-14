@@ -6,7 +6,7 @@ def returnNoChooseWord(text, word):
 
 returnNoChooseWord('пабв апрол прабв про но менко', 'абв');
 
-#2
+#4
 def compressionRleAlgorithm(text):
   res = ''
   cnt = 0
@@ -22,7 +22,6 @@ def compressionRleAlgorithm(text):
 
 compressionRleAlgorithm('aabbbcccdddddejghrgrrrrre')
 
-#3
 def uncompressionRleAlgorithm(text):
   tmp_text = text[0]
   res = ''
