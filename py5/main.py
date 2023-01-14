@@ -1,13 +1,20 @@
 #1
-def returnNoChooseWord(text, word):
-  my_list = text.split();
-  res = list(filter(lambda el: -1 == el.find(word), my_list))
-  print(*res, sep=' ')
+def returnNoChooseWord(word):
+  with open('py5/text1in.txt', 'r', encoding='UTF-8') as file:
+    my_list = file.read().split();
 
-returnNoChooseWord('пабв апрол прабв про но менко', 'абв');
+  res = list(filter(lambda el: -1 == el.find(word), my_list))
+  
+  with open('py5/text2out.txt', 'w', encoding='UTF-8') as file:
+    print(*res, file=file)
+
+returnNoChooseWord('абв');
 
 #4
-def compressionRleAlgorithm(text):
+def compressionRleAlgorithm():
+  with open('py5/text-compression4in.txt', 'r', encoding='UTF-8') as file:
+    text = file.read();
+
   res = ''
   cnt = 0
   for i in range(0, len(text)):
@@ -18,11 +25,16 @@ def compressionRleAlgorithm(text):
     else:
       res += str(cnt + 1) + text[i]
       cnt = 0
-  print(res)
 
-compressionRleAlgorithm('aabbbcccdddddejghrgrrrrre')
+  with open('py5/text-compression4out.txt', 'w', encoding='UTF-8') as file:
+    file.writelines(res)
 
-def uncompressionRleAlgorithm(text):
+compressionRleAlgorithm()
+
+def uncompressionRleAlgorithm():
+  with open('py5/text-uncompression4in.txt', 'r', encoding='UTF-8') as file:
+    text = file.read();
+  
   tmp_text = text[0]
   res = ''
   for i in range(0, len(text)):
@@ -33,6 +45,8 @@ def uncompressionRleAlgorithm(text):
     else:
       res += int(tmp_text) * text[i + 1]
       tmp_text = '0'
-  print(res)
+  
+  with open('py5/text-uncompression4out.txt', 'w', encoding='UTF-8') as file:
+    file.writelines(res)
 
-uncompressionRleAlgorithm('11a4g5h1s3d')
+uncompressionRleAlgorithm()

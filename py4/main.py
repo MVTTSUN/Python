@@ -35,7 +35,7 @@ def get_k(k):
     my_list.append(str(random.randrange(101)) + f'x^{i}+')
   my_list.append(str(random.randrange(101)) + f'x+')
   my_list.append(str(random.randrange(101)))
-  with open('k.txt', 'w') as file:
+  with open('py4/k.txt', 'w') as file:
     file.writelines(my_list)
 
 get_k(3)
