@@ -52,27 +52,6 @@ async def quit_handler(message: types.Message):
       presence_penalty=0
   )
   await message.answer(completion.choices[0].text)
-      
-        
-# async def quit_handler(message: types.Message):
-#   mess = message.text
-#   # задаем модель и промпт
-#   model_engine = "text-davinci-003"
-#   prompt = mess
-#   # задаем макс кол-во слов
-#   max_tokens = 128
-#   # генерируем ответ
-#   completion = openai.Completion.create(
-#       engine=model_engine,
-#       prompt=prompt,
-#       max_tokens=1024,
-#       temperature=0.5,
-#       top_p=1,
-#       frequency_penalty=0,
-#       presence_penalty=0
-#   )
-#   # выводим ответ
-#   print(completion.choices[0].text)
 
 if __name__ == '__main__':
     executor.start_polling(dp, skip_updates=True)
